@@ -6,6 +6,10 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 include "../includes/conn.php";
+include "../src/blur.php";
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['user_id']);
 
 // Fetch unblurred messages
 $query = "SELECT content FROM messages ORDER BY created_at DESC";
@@ -27,7 +31,10 @@ $messages = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <ul>
             <?php foreach ($messages as $msg): ?>
                 <li class="bg-gray-200 p-3 mb-2 rounded">
-                    <?php echo htmlspecialchars($msg['content']); ?>
+                    <?php 
+                        // Always show messages unblurred on the dashboard
+                        echo htmlspecialchars($msg['content']);
+                    ?>
                 </li>
             <?php endforeach; ?>
         </ul>
