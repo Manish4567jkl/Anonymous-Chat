@@ -38,29 +38,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Sign Up</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto p-8 max-w-md bg-white shadow rounded">
-        <h1 class="text-2xl font-bold mb-6">Sign Up</h1>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-8 max-w-md bg-gray-800 shadow-lg rounded-lg">
+        <h1 class="text-3xl font-bold mb-6 text-purple-400 text-center">Sign Up</h1>
         <?php if (isset($error)): ?>
             <p class="text-red-500 mb-4"><?php echo $error; ?></p>
         <?php endif; ?>
         <form method="POST" action="">
             <div class="mb-4">
-                <label for="username" class="block text-gray-700 font-medium mb-2">Username</label>
+                <label for="username" class="block text-gray-300 font-medium mb-2">Username</label>
                 <input type="text" name="username" id="username" required
-                       class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500">
+                       class="w-full p-3 bg-gray-700 border border-gray-600 rounded focus:ring-2 focus:ring-purple-500 text-white">
             </div>
             <div class="mb-4">
-                <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                <label for="password" class="block text-gray-300 font-medium mb-2">Password</label>
                 <input type="password" name="password" id="password" required
-                       class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500">
+                       class="w-full p-3 bg-gray-700 border border-gray-600 rounded focus:ring-2 focus:ring-purple-500 text-white">
             </div>
-            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+            <button type="submit" class="w-full bg-purple-500 text-white py-2 rounded hover:bg-purple-600">
                 Register
             </button>
         </form>
-        <p class="mt-4 text-center">
-            Already have an account? <a href="login.php" class="text-blue-500 underline">Log in here</a>.
+        <p class="mt-4 text-center text-gray-400">
+            Already have an account? <a href="login.php" class="text-purple-400 underline hover:text-purple-500">Log in here</a>.
         </p>
     </div>
 </body>

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             session_start();
             $_SESSION['user_id'] = $user['id'];
-            header("Location: index.php");
+            header("Location: post.php");
             exit;
         } else {
             $error = "Invalid credentials!";
@@ -31,23 +31,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Login</title>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto mt-10 max-w-md">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6">Login</h1>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div class="container mx-auto max-w-md bg-gray-800 p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center text-purple-400 mb-6">Login</h1>
         <?php if (isset($error)): ?>
             <p class="text-red-500 mb-4"><?php echo $error; ?></p>
         <?php endif; ?>
-        <form action="" method="POST" class="bg-white p-6 rounded shadow-lg">
-            <div class="mb-4">
-                <label class="block text-gray-700">Username</label>
-                <input type="text" name="username" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        <form action="" method="POST" class="space-y-6">
+            <div>
+                <label class="block text-gray-300 font-medium mb-2">Username</label>
+                <input type="text" name="username" class="w-full p-3 bg-gray-700 border border-gray-600 rounded focus:ring-2 focus:ring-purple-500 text-white" required>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Password</label>
-                <input type="password" name="password" class="w-full border border-gray-300 rounded px-3 py-2" required>
+            <div>
+                <label class="block text-gray-300 font-medium mb-2">Password</label>
+                <input type="password" name="password" class="w-full p-3 bg-gray-700 border border-gray-600 rounded focus:ring-2 focus:ring-purple-500 text-white" required>
             </div>
-            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Login</button>
+            <button type="submit" class="w-full py-2 bg-purple-500 rounded text-white font-medium hover:bg-purple-600">
+                Login
+            </button>
         </form>
+        <p class="text-center mt-4 text-gray-400">
+            Don't have an account? <a href="register.php" class="text-purple-400 underline hover:text-purple-500">Sign up here</a>.
+        </p>
     </div>
 </body>
 </html>
