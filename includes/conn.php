@@ -3,7 +3,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$db="anonymous_chat";
+$db="anon";
 
 $con=mysqli_connect($servername,$username,$password,$db);
 

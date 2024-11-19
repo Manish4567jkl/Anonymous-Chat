@@ -6,7 +6,7 @@
     <title>Anonymous Chat</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom Animation for SVG */
+   
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -16,7 +16,6 @@
             }
         }
 
-        /* SVG Styles */
         .icon {
             width: 50px;
             height: 50px;
@@ -24,7 +23,7 @@
             animation: fadeIn 1s ease-in-out;
         }
 
-        /* Hover Effect for Links */
+     
         .link-hover:hover {
             text-decoration: underline;
             color: #00c6ff;
@@ -33,10 +32,9 @@
 </head>
 <body class="bg-gray-900 text-white font-sans flex items-center justify-center min-h-screen">
 
-    <!-- Main Content Area -->
+  
     <div class="container text-center px-6 py-16 max-w-xl">
         
-        <!-- Header with SVG -->
         <div class="flex justify-center mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="icon">
                 <circle cx="32" cy="32" r="30" stroke="none" stroke-width="2" fill="#00c6ff" />
@@ -45,13 +43,13 @@
             </svg>
         </div>
 
-        <!-- Title -->
+      
         <h1 class="text-5xl font-extrabold mb-6">Anonymous Chat</h1>
         
-        <!-- Description -->
-        <p class="text-lg text-gray-300 mb-8">A secure space to share your thoughts freely without revealing your identity.</p>
+       
+        <p class="text-lg text-gray-300 mb-8"> Share your thoughts freely without revealing your identity.</p>
 
-        <!-- Call-to-Action Buttons -->
+     
         <div class="flex flex-col sm:flex-row gap-6 justify-center mb-6">
             <a href="login.php" 
                 class="px-8 py-3 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
@@ -63,7 +61,7 @@
             </a>
         </div>
 
-        <!-- Secondary Action Link with SVG -->
+  
         <p class="text-lg text-gray-300 mt-8">
             Want to post right away? <a href="post.php" class="link-hover">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="inline-block icon mr-2">

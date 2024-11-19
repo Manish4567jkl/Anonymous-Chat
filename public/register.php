@@ -1,26 +1,25 @@
 <?php
-// Include the database connection file
+
 include "../includes/conn.php";
 
-// Check if the form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Check if the username already exists
+ 
     $query = "SELECT * FROM users WHERE username = '$username'";
     $result = mysqli_query($con, $query);
 
     if (mysqli_num_rows($result) > 0) {
         $error = "Username already exists. Please choose another.";
     } else {
-        // Hash the password for security
+
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-        // Insert the user into the database
         $query = "INSERT INTO users (username, password) VALUES ('$username', '$hashedPassword')";
         if (mysqli_query($con, $query)) {
-            // Redirect to login page after successful signup
+           
             header("Location: login.php?signup=success");
             exit();
         } else {
